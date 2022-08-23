@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
-console.log("env vars", process.env.NODE_ENV, process.env.APP_ENV)
+console.log("------------ env vars ----------", process.env.NODE_ENV, process.env.APP_ENV)
 
 module.exports = {
   module: {
