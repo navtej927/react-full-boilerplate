@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --env mode=development --open --mode development",
+    "dev": "APP_ENV=development webpack serve --env mode=development --open --mode development",
     "start": "serve dist",
-    "build": "webpack"
+    "build": "APP_ENV=production webpack"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.1",
     "style-loader": "^3.3.1",
     "webpack-dev-server": "^4.10.0"
   }
