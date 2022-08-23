@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://navtej927.github.io/react-full-boilerplate",
   "scripts": {
     "test": "jest",
     "dev": "APP_ENV=development webpack serve --env mode=development --open --mode development",
