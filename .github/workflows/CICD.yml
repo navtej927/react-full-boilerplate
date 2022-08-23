@@ -16,12 +16,39 @@ jobs:
         node-version: 14.x
     - name: Install dependencies
       run: yarn install --frozen-lockfile
+    - name: Run unit tests
+      run: yarn test
     - name: Generate build
       run: yarn build
-    # - name: Share artifact inside workflow
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #       name: react-github-actions-build
-    #       path: dist
+    - name: Share artifact inside workflow
+      uses: actions/upload-artifact@v1
+      with:
+          name: react-github-actions-build
+          path: dist
+          
+    deploy:
+      runs-on: ubuntu-latest
+      # When application is successfully tested and build has been generated
+      # Then we can start with deployment
+      needs: build
+
+      steps:
+        # Download previously shared build
+        - name: Get artifact
+          uses: actions/download-artifact@v1
+          with:
+            name: react-github-actions-build
+            path: ./dist
+
+        - name: check the files to deploy
+          run: cd dist && ls
+        
+        - name: Deploy to gh-pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.PAGES_TOKEN }}
+            publish_dir: ./dist
+            user_name: 'github-actions[bot]'
+            user_email: 'github-actions[bot]@users.noreply.github.com'
     
 
