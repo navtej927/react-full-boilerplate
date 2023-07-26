@@ -1,3 +1,6 @@
 version: 2.1
-jobs: 
-  - Test nav 
+steps: 
+  - checkout
+  - run: 
+      name: "Say Hello"
+      command: "echo Navtej" 
