@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # Primary container image where all steps run
-      - image: cimg/node:stable
+      - image: cimg/node:20.5.0
     steps: 
       - checkout
       - run: node --version
