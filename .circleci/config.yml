@@ -7,5 +7,9 @@ jobs:
     steps: 
       - checkout
       - run: node --version
-      - run: yarn
-      - run: yarn test
+      - run:
+        commane: yarn
+        name: Install Dependencies
+      - run:
+        command: yarn test
+        name: Run Tests
