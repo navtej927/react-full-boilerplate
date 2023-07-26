@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: node --version
       - run:
-        commane: yarn
+        command: yarn
         name: Install Dependencies
       - run:
         command: yarn test
