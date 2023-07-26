@@ -6,8 +6,7 @@ jobs:
       - image: cimg/node:20.5.0
     steps: 
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - run: node --version
       - run:
           command: yarn test
           name: Run tests
