@@ -5,7 +5,6 @@ jobs:
       # Primary container image where all steps run
       - image: cimg/node:20.5.0
     steps: 
-      - checkout
       - run: node --version
       - run:
           command: yarn
